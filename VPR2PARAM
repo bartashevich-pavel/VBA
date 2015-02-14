@@ -1,0 +1,12 @@
+Function VPR2PARAM(Znach1 As Variant, Znach2 As Variant, Table As Range, Znach2Column As Integer, ResultColumn As Integer)
+Dim i As Long
+For i = 1 To Table.Rows.Count
+If UCase(Table.Cells(i, 1)) = UCase(Znach1) Then
+If (UCase(Table.Cells(i, Znach2Column)) = UCase(Znach2)) Then
+VPR2PARAM = Table.Cells(i, ResultColumn)
+Exit For
+End If
+VPR2PARAM = "Второй параметр не существует"
+End If
+Next i
+End Function
